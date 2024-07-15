@@ -1,9 +1,10 @@
 import React from "react";
 import guy from "../../assets/guy.png";
 import MyButton from "../MyButton";
-
+import { Link } from "react-router-dom";
 
 const UploadCv = () => {
+  const token = localStorage.getItem("token");
   return (
     <section className="bg-info-subtle">
       <div className="container  uploadsection">
@@ -20,10 +21,9 @@ const UploadCv = () => {
             {/* <button className="btn btn-info text-white px-3 mt-3 fs-5">
               Upload Your CV
             </button> */}
-            <link to={token ? "/applied jobs": "/login"}>
+            <Link to={token ? "/appliedjobs" : "/login"}>
               <MyButton content={"Upload Your CV"} />
-            </link>
-            <MyButton content={"Upload Your CV"} />
+            </Link>
           </div>
         </div>
       </div>
